@@ -9,6 +9,7 @@ app.secret_key = os.urandom(12)
 
 @app.route('/')
 def layout():
+    
     return render_template('layout.html')
 
 @app.route('/home')
@@ -16,7 +17,7 @@ def home():
     if not session.get('logged_in'):
         return render_template('login.html')
     else:
-        return render_template('home.html')
+        return "Hello Boss!" 
 
 @app.route('/about')
 def about():
@@ -29,8 +30,11 @@ def login():
             session['logged_in'] = True
         else:
             flash('Invalid Credentials. Please try again.')       
-    return home() 
+    return home()
 
-
+@app.route("/logout")
+def logout():
+    session['logged_in'] = False
+    return home()
   
 
