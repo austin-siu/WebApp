@@ -1,2 +1,14 @@
 __pycache__
 .DS_STORE
+
+# temporary files?
+**/*~
+
+# we don't want generated pycache files
+**/*.pyc
+
+# don't push your database
+**/*.db
+
+# for my virtualenv
+env/
