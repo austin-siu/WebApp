@@ -15,4 +15,4 @@ COPY . .
 
 ENTRYPOINT [ "python3" ]
 
-CMD [ "localserver.py" ]
+CMD [ "site.py" ]
