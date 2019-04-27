@@ -1,10 +1,6 @@
 {% extends "bootstrap/base.html" %}
 {% import "bootstrap/wtf.html" as wtf %}
 
-{% block title %}
-Login
-{% endblock %}
-
 {% block styles %}
 {{super()}}
 <link rel="stylesheet" href="{{url_for('.static', filename='signin.css')}}">
@@ -20,6 +16,7 @@ Login
         {{ wtf.form_field(form.password) }}
         {{ wtf.form_field(form.remember) }}
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <p> Need an account? <a href = "{{url_for('signup')}}"> Signup Here </a></p>
       </form>
 
     </div> 
