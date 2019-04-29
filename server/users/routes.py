@@ -20,7 +20,10 @@ def login():
             if check_password_hash(user.password, form.password.data):
                 login_user(user, remember=form.remember.data)
                 return redirect(url_for('main.home'))
-        return '<h1>Invalid username or password</h1>'
+            else:
+                flash('Wrong password!', 'danger')
+        else:
+            flash('Username does not exist.', 'danger')
     return render_template('login.html', title='Login', form=form)
 
 @users.route('/signup', methods=['GET', 'POST'])
