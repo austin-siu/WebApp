@@ -6,6 +6,7 @@ __pycache__
 
 # we don't want generated pycache files
 **/*.pyc
+*.pyc
 
 # don't push your database
 **/*.db

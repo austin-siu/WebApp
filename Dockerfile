@@ -15,4 +15,4 @@ COPY . .
 
 ENTRYPOINT [ "python3" ]
 
-CMD [ "site.py" ]
+CMD [ "wsgi.py" ]
