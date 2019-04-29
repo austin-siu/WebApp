@@ -18,6 +18,7 @@ def create_app(config_class=Config):
     app.config.from_object(Config)
 
     db.init_app(app)
+
     bootstrap.init_app(app)
     login_manager.init_app(app)
     mail.init_app(app)
@@ -30,5 +31,7 @@ def create_app(config_class=Config):
     app.register_blueprint(posts)
     app.register_blueprint(main)
     app.register_blueprint(errors)
+
+    db.create_all(app=app) # this way we import all models we use
 
     return app
